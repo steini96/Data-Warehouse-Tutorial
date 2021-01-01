@@ -17,7 +17,7 @@ Creating reports in Power BI
 We start with creating a new database to hold the data in the new data warehouse. To do that we open SQL Server Management Studio and right click "Databases" in the Object Explorer. Then you click "New Database..." and a modal window pops up.  
 In the modal window you need to first fill out the name of the new database, I will call it SteiniDW and you can too or choose a name that you like. Then go into "Options" on the left side and set the "Recovery model" to Simple. After that you can go on and click "Ok".  
 Then you can see your new database under databases.  
-Now you need to create the Fact and Dimension Database Schemas. Click "New Query" to open up a new query window and copy the "schema_script" from the Exercise files in this Repository and paste it to the new query. Now execute the script by for example select the whole code and click "Execute". Now you hace created the Fact and Dimension Schemas.  
+Now you need to create the Fact and Dimension Database Schemas. Click "New Query" to open up a new query window and copy the "CreateSchemas" from the Scripts folder in this Repository and paste it to the new query. Now execute the script by for example select the whole code and click "Execute". Now you hace created the Fact and Dimension Schemas and you can see them if you run the query "SELECT * FROM sys.schemas;".  
 
 # 2. Creating the tables in the warehouse
-Now we need to create the tables, here we will create one Fact table and one schema table. Begin with openiing a new query window then find the "tables_script" in the Exercise files and copy them into the query window and execute the code.  
+Now we need to create the tables, here we will create one Fact table and one schema table. Begin with opening a new query window then find the "CreateTables" in the Scripts folder and copy them into the query window and execute the code.  
