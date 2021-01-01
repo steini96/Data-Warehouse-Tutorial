@@ -1,0 +1,39 @@
+use SteiniDW;
+go
+
+CREATE TABLE Dimension.Stores (
+    StoreKey int IDENTITY (1,1) NOT NULL,
+    StoreAlternateKey int NOT NULL,
+    Name nvarchar(50) Not NULL,
+    City nvarchar(50) NOT NULL,
+    Statename nvarchar(50) NOT NULL,
+    Country nvarchar(50) NOT NULL,
+    Zip char(5) NOT NULL
+
+    CONSTRAINT PK_Store PRIMARY KEY CLUSTERED (
+        StoreKey ASC
+    )
+);
+GO
+
+CREATE TABLE Fact.Sales (
+    SalesID int IDENTITY (1,1) NOT NULL,
+    Date varchar(25) NOT NULL,
+    StoreKey int NOT NULL,
+    Price int NOT NULL
+
+    CONSTRAINT PK_Sales PRIMARY KEY CLUSTERED (
+        SalesID ASC
+    )
+);
+GO
+
+ALTER TABLE Fact.Sales WITH CHECK ADD CONSTRAINT Constrain_Sales_StoreKey FOREIGN KEY(StoreKey)
+REFERENCES Dimension.Stores (StoreKey);
+GO
+
+ALTER TABLE Fact.Sales CHECK CONSTRAINT Constrain_Sales_StoreKey;
+GO
+
+
+

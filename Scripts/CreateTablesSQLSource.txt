@@ -1,0 +1,33 @@
+use SteiniSourceDB;
+go
+
+Create Table Stores (
+	StoreKey int Identity (1,1) not null,
+	Name nvarchar(50) Not Null,
+	AddressId int not null
+);
+Go
+
+Create Table Addresses (
+	AddressId int Identity(1,1) not null,
+	City nvarchar(50) not null,
+	State nvarchar(50) not null,
+	Country nvarchar(50) not null,
+	ZipCode nvarchar(10) not null
+);
+GO
+
+Create Table Sales (
+	SalesId int Identity(1,1) not null,
+	Date varchar(25) not null,
+	StoreKey int not null,
+	Price int not null
+);
+Go
+
+ALTER TABLE Sales WITH CHECK ADD CONSTRAINT Constrain_Sales_StoreKey FOREIGN KEY(StoreKey)
+REFERENCES Dimension.Stores (StoreKey);
+GO
+
+ALTER TABLE Sales CHECK CONSTRAINT Constrain_Sales_StoreKey;
+GO
