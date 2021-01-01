@@ -20,4 +20,4 @@ Then you can see your new database under databases.
 Now you need to create the Fact and Dimension Database Schemas. Click "New Query" to open up a new query window and copy the "CreateSchemas" from the Scripts folder in this Repository and paste it to the new query. Now execute the script by for example select the whole code and click "Execute". Now you hace created the Fact and Dimension Schemas and you can see them if you run the query "SELECT * FROM sys.schemas;".  
 
 # 2. Creating the tables in the warehouse
-Now we need to create the tables, here we will create one Fact table and one schema table. Begin with opening a new query window then find the "tables_script" in the Scripts folder and copy them into the query window and execute the code.  
+Now we need to create the tables, here we will create one Fact table and one schema table. Begin with opening a new query window then find the "CreateTables" in the Scripts folder and copy them into the query window and execute the code.  
