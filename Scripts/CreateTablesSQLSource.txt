@@ -26,7 +26,7 @@ Create Table Sales (
 Go
 
 ALTER TABLE Sales WITH CHECK ADD CONSTRAINT Constrain_Sales_StoreKey FOREIGN KEY(StoreKey)
-REFERENCES Dimension.Stores (StoreKey);
+REFERENCES Stores (StoreKey);
 GO
 
 ALTER TABLE Sales CHECK CONSTRAINT Constrain_Sales_StoreKey;

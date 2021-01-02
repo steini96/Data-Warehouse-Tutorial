@@ -1,0 +1,137 @@
+use SteiniSourceDB;
+
+Insert Into Addresses (
+	City,
+	State,
+	Country,
+	ZipCode
+) Values (
+	'Tübingen',
+	'Tübingen',
+	'Germany',
+	72070
+),
+(
+	'Reykjavík',
+	'Reykjavík',
+	'Iceland',
+	101
+),
+(
+	'Garðabær',
+	'Garðabær',
+	'Iceland',
+	225
+),
+(
+	'Hafnarfjörður',
+	'Hafnarfjörður',
+	'Iceland',
+	222
+),
+(
+	'Kópavogur',
+	'Kópavogur',
+	'Iceland',
+	203
+);
+Go
+
+Insert Into Stores (
+	Name,
+	AddressId
+) Values (
+	'Ein gut Laden',
+	1
+),
+(
+	'Besta búðin',
+	2
+),
+(
+	'Versta búðin',
+	3
+)
+Go
+
+Insert Into Sales(
+	Date,
+	StoreKey,
+	Price
+) Values
+    (
+        '20190601',
+        1,
+	4
+    ),
+    (
+        '20190601',
+        2,
+	5
+    ),
+    (
+        '20190601',
+        3,
+	6
+    ),
+    (
+        '20190601',
+        2,
+	7
+    ),
+    (
+        '20190601',
+        3,
+	5
+    ),
+    (
+        '20190601',
+        1,
+	7
+    ),
+    (
+        '20190601',
+        2,
+	5
+    ),
+    (
+        '20190601',
+        3,
+	6
+    ),
+    (
+        '20190601',
+        2,
+	8
+    ),
+    (
+        '20190601',
+        1,
+	9
+    ),
+    (
+        '20190601',
+        1,
+	6
+    ),
+    (
+        '20190601',
+        2,
+	5
+    ),
+    (
+        '20190601',
+        2,
+	5
+    ),
+    (
+        '20190601',
+        3,
+	5
+    ),
+    (
+        '20190601',
+        3,
+	3
+);
+Go
