@@ -1,0 +1,18 @@
+Use SteiniDW;
+Go
+
+Create View dbo.SalesByDate
+    WITH SCHEMABINDING
+    AS
+        Select Sales.Date, Sales.Price, Sales.SalesId,
+            sales.StoreKey
+        FROM Fact.Sales JOIN Dimension.Store ON Sales.StoreKey = Store.StoreKey
+;
+GO
+
+CREATE UNIQUE CLUSTERED INDEX CluIndSales
+   ON dbo.SalesByDate (SalesId);
+GO
+
+SELECT * FROM dbo.SalesByDate;
+GO
