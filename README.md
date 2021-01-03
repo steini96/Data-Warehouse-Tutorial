@@ -25,6 +25,9 @@ Now you need to create the Fact and Dimension Database Schemas. Click "New Query
 
 # 2. Creating the tables in the warehouse
 Now we need to create the tables, here we will create one Fact table and one schema table. Begin with opening a new query window then find the "CreateTables" in the Scripts folder and copy them into the query window and execute the code.  
+Now you have created the tables that we need in the data warehouse in this tutorial.  
+We also want to create an UNIQUE CLUSTERED INDEX though. To create it you need to open the "CreateUniqueClusteredIndex" file and run the script from it in a new query window.
+
 
 # 3. Creating the tables in the SQL source database
 We need a database to use as a source database to try out our 
