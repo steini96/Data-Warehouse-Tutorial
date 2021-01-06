@@ -72,8 +72,11 @@ You should now draw an blue arrow from the source to the destination and double 
 Then you can go back to the control flow window, right click the "Fill up Sales from Excel" task and click "Execute Task".  
 Then the Sales table in the data warehouse should have the data from the Excel source.
 
-# Create a report in Power BI
-
-
-
+# 7. Create a report in Power BI
+We are going to create a report in Power BI to visualize the data from the data warehouse.  
+Start with opening Power BI and selecting "Get Data". Click the Database button to see only database sources and double click SQL Server Database. Write the name of your SQL Server instance under "Server" and write the name of the data warehouse database under "Database". Now you select "Fact.Sales" and click "Load".  
+Now you have added one of two tables we are going to add into this Power BI project. On the left side of the Power BI desktop you can see three figures. One represents the Report page, one the Data page and one the Model page. We want to add another table into this project so you need to navigate onto the Data page and click the Get data button under Home. There you again double click SQL Server Database, set the server as the name of your SQL Server instance and write the name of your data warehouse database under database. You can then click the ok button and select the Dimension.Store table and click "Load".  
+Now you have two tables imported into your project and you can see them on the right of the screen on the data page. Now we need to make the report from the data we just imported. You now need to go to the report page and select a stacked column chart under visualizations. Then you need to drag the name column in the field section on the page to the "Axis" in the Visualization section of the page. Then you need to drag the SalesID to "Values" and Country to "Legend". Now you have a simple chart of sales in different stores and see by the colors what country they are in.  
+Next we want to create a map visualization(the sign for it is a globe) so click map. Now drag City to Location, SalesID to Size and Country to Legend. Then you can see that you have a map with circles of different size to indicate the amount of sales at each store.  
+Now you know how to make simple visualization in Power BI and I encourage you to play around in it, it is a pretty straight forward reporting tool.
 
