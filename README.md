@@ -72,6 +72,7 @@ You should now draw an blue arrow from the source to the destination and double 
 Then you can go back to the control flow window, right click the "Fill up Sales from Excel" task and click "Execute Task".  
 Then the Sales table in the data warehouse should have the data from the Excel source.
 
+# Create a report in Power BI
 
 
 
