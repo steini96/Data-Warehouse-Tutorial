@@ -55,15 +55,22 @@ Now double click the "Destination Assistant in the SSIS toolbox, set the destina
 Now you have a source and an destination. Double click the source object and set the data access mode to "SQL command". Then take the script, "SelectForStores", and paste it into the text field. Now you can preview the data that is being selected and then press "OK".  
 Now you need to drag the blue arrow from the source to the destination. Then double click the destination and select the Store table from the list of tables, click "Keep Identity" and then go to mappings. In mappings you need to set what columns corrrespond to each other. Then press the "OK" button.  
 Then you can go back to the control flow window, right click the "Fill up Store" task and click "Execute Task".  
-Then the stores table in the data warehouse should have the data from the SQL source database.
+Then the Stores table in the data warehouse should have the data from the SQL source database.
 
-## 6.2 Fill up Sales
+### 6.2 Fill up Sales
+Double click the "Fill up Sales" task and then double click the Source assistant. Select SQL Server and double click "New...",  now you should be inside the Connection Manager. There you need to set the Provider as "Native OLE DB\SQl Server Native Client 11.0", also set the server name as your server instance. Then select your source database in the "Connect to a database" section, test the connection and press "OK".  
+Now double click the destination assistant, select SQl Server and double click "New...". There you need to set the Provider as "Native OLE DB\SQl Server Native Client 11.0", also set the server name as your server instance. Then select your data warehouse database in the "Connect to a database" section, test the connection and press "OK".  
+Now you have a source and an destination. Double click the source object,set the data access mode to "Table or view" and then select the Sales table. Now you can click "OK". 
+You should now draw an blue arrow from the source to the destination and double click the destination. Set the data mode as "Table or view- fast load", select the Sales table and set activate "Keep identity". Now go to Mappings and set the corresponding input columns to the destination columns. Go back to Connection Manager and click "OK".
+Then you can go back to the control flow window, right click the "Fill up Sales" task and click "Execute Task".  
+Then the Sales table in the data warehouse should have the data from the SQL source database.
 
-
-  
-
-
-
+### 6.3 Fill up Sales from Excel
+Double click the "Fill up Sales from Excel" task and then double click the Source assistant. Select Excel and double click "New...", now you should be in the Connection Manager. Now click browse and select the "ExcelSourceSales" file that you can get in this repository. Keep "First row has column names" selected and press the OK button. Now you have a source and an destination. Double click the source object,set the data access mode to "Table or view" and then select the Excel sheet. Now you can click "OK".  
+Now double click the destination assistant, select SQl Server and double click "New...". There you need to set the Provider as "Native OLE DB\SQl Server Native Client 11.0", also set the server name as your server instance. Then select your data warehouse database in the "Connect to a database" section, test the connection and press "OK". 
+You should now draw an blue arrow from the source to the destination and double click the destination. Set the data mode as "Table or view- fast load", select the Sales table and set activate "Keep identity". Now go to Mappings and set the corresponding input columns to the destination columns. Go back to Connection Manager and click "OK".  
+Then you can go back to the control flow window, right click the "Fill up Sales from Excel" task and click "Execute Task".  
+Then the Sales table in the data warehouse should have the data from the Excel source.
 
 
 
