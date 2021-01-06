@@ -45,7 +45,8 @@ To use SSIS you need to have Visual Studio and SQL Server Data Tools in Visual S
 # 6. Creating data flow tasks
 Data flow tasks are tasks that cann be executed that transport data between sources.
 Now create three data flow tasks in the control flow window by finding and selecting "Data Flow Task" three times in the "SSIS Toolbox" on the left side of the screen. Name those tasks "Fill up Store", "Fill up Sales" and Fill up Sales from Excel".  
-  
+
+## 6.1 Fill up store
 Double click the "Fill up Store" task and then you are in its data flow window. In the data flow window you can say what is supposed to happen when the task is executed. In this task we want to take the data from the Store source table and move it into the Stores table in the data warehouse. Now double click the "Source Assistant" in the "SSIS Toolbox and a modal pop up should appear.  
 Select "SQL Server" as the source type and double click "New..." in the "Select connection managers" section. Then another popup modal will appear that is called Connection Manager. In the Connection Manager you need to set the provider as "Native OLE DB\SQl Server Native Client 11.0". Then set the servername as the name of your SQL Server instance.  
 You can see the name of your server instance in SQL Server Management Studio in the object explorer on the left side of the window. It is the object at the top of the object explorer and if you right click and select properties, you can see the name of the server instance.
@@ -53,9 +54,10 @@ Then set the name of the database you want to connect to in the SQL Server insta
 Now double click the "Destination Assistant in the SSIS toolbox, set the destination type as "SQL Server" and double click "New..." just as before. Set the provider as "Native OLE DB\SQl Server Native Client 11.0", the server name as the name of your server instance and set the database name as the name of the Data Warehouse database(in my case it is "SteiniDW"). Then Test the connection and confirm by clicking "OK".  
 Now you have a source and an destination. Double click the source object and set the data access mode to "SQL command". Then take the script, "SelectForStores", and paste it into the text field. Now you can preview the data that is being selected and then press "OK".  
 Now you need to drag the blue arrow from the source to the destination. Then double click the destination and select the Store table from the list of tables, click "Keep Identity" and then go to mappings. In mappings you need to set what columns corrrespond to each other. Then press the "OK" button.  
-  
 Then you can go back to the control flow window, right click the "Fill up Store" task and click "Execute Task".  
 Then the stores table in the data warehouse should have the data from the SQL source database.
+
+## 6.2 Fill up Sales
 
 
   
