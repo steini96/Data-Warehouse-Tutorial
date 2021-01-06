@@ -1,0 +1,3 @@
+select s.StoreKey, s.Name, s.AddressId, a.City, a.Country, a.State, a.ZipCode
+from Stores as s
+left join Addresses as a on a.AddressId = s.AddressId;
