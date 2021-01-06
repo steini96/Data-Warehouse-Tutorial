@@ -46,7 +46,7 @@ To use SSIS you need to have Visual Studio and SQL Server Data Tools in Visual S
 Data flow tasks are tasks that cann be executed that transport data between sources.
 Now create three data flow tasks in the control flow window by finding and selecting "Data Flow Task" three times in the "SSIS Toolbox" on the left side of the screen. Name those tasks "Fill up Store", "Fill up Sales" and Fill up Sales from Excel".  
 
-## 6.1 Fill up store
+### 6.1 Fill up store
 Double click the "Fill up Store" task and then you are in its data flow window. In the data flow window you can say what is supposed to happen when the task is executed. In this task we want to take the data from the Store source table and move it into the Stores table in the data warehouse. Now double click the "Source Assistant" in the "SSIS Toolbox and a modal pop up should appear.  
 Select "SQL Server" as the source type and double click "New..." in the "Select connection managers" section. Then another popup modal will appear that is called Connection Manager. In the Connection Manager you need to set the provider as "Native OLE DB\SQl Server Native Client 11.0". Then set the servername as the name of your SQL Server instance.  
 You can see the name of your server instance in SQL Server Management Studio in the object explorer on the left side of the window. It is the object at the top of the object explorer and if you right click and select properties, you can see the name of the server instance.
